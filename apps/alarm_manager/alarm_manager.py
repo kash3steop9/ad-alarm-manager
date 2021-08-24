@@ -24,7 +24,8 @@ class AlarmManager(hass.Hass):
 
         self.alarm_code = self.args.get("alarm_code")
 
-        self.house_mode_entity = "input_select.house_mode"
+        # "input_select.house_mode"
+        self.house_mode_entity = self.args.get("house_mode_entity")
 
         self.run_daily(self.on_reminder, self.reminder_time)
         self.run_daily(self.on_deactivate, self.deactivate_time)
